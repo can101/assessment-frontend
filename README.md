@@ -1,11 +1,10 @@
 # Frontend Assessment
- 
- > Case info file link : [case](CASE.md)
 
- # My Goal For Similar UI
+> Case info file link : [case](CASE.md)
+
+# My Goal For Similar UI
 
 <img src="assets/images/png/goal.png"/>
-
 
 ## Installation
 

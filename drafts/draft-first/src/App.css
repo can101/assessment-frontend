@@ -1,11 +1,11 @@
-.App{
-background-color: cadetblue;
-padding: 10px;
-display: grid;
-gap: 10px;
+.App {
+  background-color: cadetblue;
+  padding: 10px;
+  display: grid;
+  gap: 10px;
 }
 
-.sortable-item{
+.sortable-item {
   background-color: blue;
   padding: 10px 20px;
   border-radius: 20px;

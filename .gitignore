@@ -39,6 +39,10 @@ build/Release
 
 # Dependency directories
 node_modules/
+package-lock.json
+dist
+dist-ssr
+*.local
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -102,3 +106,14 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

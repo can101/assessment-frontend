@@ -1,21 +1,20 @@
-@import "reset.css";
-@import "normalize.css";
-
+@import 'reset.css';
+@import 'normalize.css';
 
 .App {
-    background-color: darkseagreen;
-    height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: darkseagreen;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box {
-    max-width: 800px;
-    max-height: 400px;
-    background-color: blueviolet;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
+  max-width: 800px;
+  max-height: 400px;
+  background-color: blueviolet;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
 }
