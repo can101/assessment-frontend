@@ -14,7 +14,7 @@
     "format:check": "prettier --check '.' './src'"
   },
   "lint-staged": {
-    "*": [
+    "*/src": [
       "npm run format:check",
       "npm run lint"
     ]

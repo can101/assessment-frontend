@@ -30,3 +30,6 @@ dist-ssr
 *.sln
 *.sw?
 vite-env.d.ts
+.husky/*
+.vscode/*
+drafts/*

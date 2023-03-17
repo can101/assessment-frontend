@@ -8,4 +8,6 @@ vite-env.d.ts
 tsconfig.json
 tsconfig.node.json
 vite.config.ts
-README.md
+.husky/*
+.vscode/*
+drafts/*
