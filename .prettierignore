@@ -1,0 +1,11 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+package.json
+package-lock.json
+vite-env.d.ts
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+README.md
