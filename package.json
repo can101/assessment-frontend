@@ -8,15 +8,15 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "lint": "eslint --ext .ts,.tsx,.vue '.' './src'",
-    "lint:fix": "eslint --ext .ts,.tsx,.vue '.' './src' --fix",
-    "format": "prettier --write '.' './src'",
-    "format:check": "prettier --check '.' './src'"
+    "lint": "eslint --ext .ts,.tsx,.vue './src'",
+    "lint:fix": "eslint --ext .ts,.tsx,.vue './src' --fix",
+    "format": "prettier --write './src'",
+    "format:check": "prettier --check './src'"
   },
   "lint-staged": {
     "*/src": [
-      "npm run format",
       "npm run lint fix",
+      "npm run format",
       "git add ."
     ]
   },
