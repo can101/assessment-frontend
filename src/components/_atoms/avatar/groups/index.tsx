@@ -9,6 +9,15 @@ interface IGroup {
 	border?: boolean;
 }
 
+/**
+ * This component is the molecul element.
+ * @param {IAvatar} items - passed items for loop
+ * @param {boolean} round - [round=false] - assigned avatar round state
+ * @param {boolean} border - [border=false] - assigned avatar border state
+ * @param {(xs | sm | md | lg | xl)} size [size=md]
+ * @returns avatar group react component
+ */
+
 const AvatarGroup: FC<IGroup> = ({
 	items,
 	size = "md",

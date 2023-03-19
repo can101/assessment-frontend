@@ -15,6 +15,19 @@ export interface IAvatar {
 	active?: boolean;
 }
 
+/**
+ * This component is the atomic element.
+ * @param {(xs | sm | md | lg | xl)} size [size=md]
+ * @param {ReactNode} badgeIcon - badge custom icon
+ * @param {string} src - image source link
+ * @param {string} alt - image alt attribute text
+ * @param {boolean} active - [active=false] - assigned avatar badge active state
+ * @param {boolean} round - [round=false] - assigned avatar badge round state
+ * @param {boolean} border - [border=false] - assigned avatar badge border state
+ * @param {string} title -print first chracters of the text
+ * @returns avatar react component
+ */
+
 const Avatar: FC<IAvatar> = ({
 	src,
 	alt,
