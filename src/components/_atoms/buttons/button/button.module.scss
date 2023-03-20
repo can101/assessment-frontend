@@ -65,7 +65,7 @@
       }
       // focus effect
       &:focus:not(&:disabled) {
-        box-shadow: 0px 2px 4px var(--chinese), 0px 0px 0px 4px var(--beau);
+        box-shadow: 0px 2px 4px var(--chinese), 0px 0px 0px 4px var(--ghost);
       }
     }
     &__v_quaternary {
