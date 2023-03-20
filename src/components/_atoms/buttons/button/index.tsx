@@ -1,6 +1,6 @@
-import { FC, ReactElement, ReactNode } from "react";
+import {FC, ReactElement, ReactNode} from "react";
 import styles from "./button.module.scss";
-import { IconContext } from "react-icons";
+import {IconContext} from "react-icons";
 
 type VariantType = "primary" | "secondary" | "tertiary" | "quaternary";
 type SizeType = "xs" | "sm" | "md" | "lg" | "xl";
@@ -24,7 +24,7 @@ const IsindeWrapper: FC<{ children: ReactNode }> = (props): ReactElement => {
  * @param {(primary | secondary | tertiary | quaternary)} variant [variant=primary]
  * @param {(xs | sm | md | lg | xl)} size [size=md]
  * @param {function} onClick - assigned button click function
- * @param {ReactNode} iconLEft - array left icon
+ * @param {ReactNode} iconLeft - array left icon
  * @param {ReactNode} iconRight - array right icon
  * @param {boolean} isDisable - [isDisable=false] - assigned button disable state
  * @param {string} title -print button inside text
@@ -45,7 +45,7 @@ const Button: FC<IButton> = ({
 	const iconSizeClass = styles[`container__button__${size}__icon`];
 	return (
 		<div className={styles.container}>
-			<IconContext.Provider value={{ className: `${iconSizeClass}` }}>
+			<IconContext.Provider value={{className: `${iconSizeClass}`}}>
 				<button
 					className={`${styles.container__button} ${sizeClass} ${variantClass}`}
 					disabled={isDisable}
