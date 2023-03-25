@@ -2,3 +2,8 @@
 @import "./normalize.scss";
 @import "./variables.scss";
 @import "./root.scss";
+
+*::selection {
+  background-color: var(--azure);
+  color: #fff;
+}
