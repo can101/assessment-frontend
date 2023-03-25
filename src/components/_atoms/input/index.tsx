@@ -5,7 +5,7 @@ import { IoIosAlert } from "react-icons/io";
 type SizeType = "sm" | "md" | "lg" | "xl";
 type WidthSize = "full" | "default";
 type StatusType = "danger" | "success" | "default";
-interface IInput {
+interface ITextarea {
 	size?: SizeType;
 	placeholder?: string;
 	label?: string;
@@ -13,7 +13,6 @@ interface IInput {
 	value: string;
 	handleChange: (e: string) => void;
 	widthSize?: WidthSize;
-	leftIcon?: ReactNode;
 	status?: StatusType;
 	hintText?: string;
 }
@@ -22,7 +21,6 @@ interface IInput {
  * This component is the atomic element.
  * @param {( sm | md | lg | xl)} size [size=md]
  * @param {( full | default)} widthSize [widthSize=default]
- * @param {ReactNode} leftIcon - input left custom icon
  * @param {boolean} disable - [disable=false] - assigned disable state
  * @param {string} label - print info text
  * @param {string} placeholder - print empty input
@@ -30,15 +28,14 @@ interface IInput {
  * @param {(danger | success | default)} status [status=default] - hint status
  * @param {string} hintText - alert message
  * @param {function} handleChange - input assigned onchange method
- * @returns input react component
+ * @returns textarea react component
  */
 
-const Input: FC<IInput> = ({
+const Input: FC<ITextarea> = ({
 	size = "md",
 	disable = false,
 	handleChange,
 	label,
-	leftIcon,
 	placeholder,
 	status = "default",
 	value,
@@ -47,16 +44,14 @@ const Input: FC<IInput> = ({
 }): ReactElement => {
 	// add custom id
 	const Id = useId();
-	// icon  show status
-	const iconStatus = leftIcon ? true : false;
-	// onchange funtion
+	// onchange function
 	function onHandleChange(e: FormEvent<HTMLInputElement>) {
 		const newValue = e.currentTarget.value as string;
 		handleChange(newValue);
 	}
 	return (
 		<div
-			className={`${styles.container} ${styles[`width__full__${widthSize}`]}`}
+			className={`${styles.container} ${styles[`width__${widthSize}`]}`}
 			data-diable={disable}
 		>
 			{label && (
@@ -65,13 +60,6 @@ const Input: FC<IInput> = ({
 				</label>
 			)}
 			<div className={styles.input__box}>
-				{iconStatus && (
-					<span
-						className={`${styles.input__left_icon} ${styles[`input__left_icon__size__${size}`]}`}
-					>
-						{leftIcon}
-					</span>
-				)}
 				<input
 					placeholder={placeholder}
 					className={`${styles.input} ${styles[`input__size__${size}`]} ${
