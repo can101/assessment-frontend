@@ -1,4 +1,4 @@
-import { FC, FormEvent, ReactElement, ReactNode, useId } from "react";
+import { FC, FormEvent, ReactElement, useId } from "react";
 import styles from "./textarea.module.scss";
 import { IoIosAlert } from "react-icons/io";
 
@@ -13,7 +13,6 @@ interface ITextarea {
 	value: string;
 	handleChange: (e: string) => void;
 	widthSize?: WidthSize;
-	leftIcon?: ReactNode;
 	status?: StatusType;
 	hintText?: string;
 }
@@ -22,23 +21,21 @@ interface ITextarea {
  * This component is the atomic element.
  * @param {( sm | md | lg | xl)} size [size=md]
  * @param {( full | default)} widthSize [widthSize=default]
- * @param {ReactNode} leftIcon - input left custom icon
  * @param {boolean} disable - [disable=false] - assigned disable state
  * @param {string} label - print info text
  * @param {string} placeholder - print empty input
- * @param {string} value - print input text
+ * @param {string} value - print textarea text
  * @param {(danger | success | default)} status [status=default] - hint status
  * @param {string} hintText - alert message
- * @param {function} handleChange - input assigned onchange method
- * @returns input react component
+ * @param {function} handleChange - textarea assigned onchange method
+ * @returns textarea react component
  */
 
-const Input: FC<ITextarea> = ({
+const Textarea: FC<ITextarea> = ({
 	size = "md",
 	disable = false,
 	handleChange,
 	label,
-	leftIcon,
 	placeholder,
 	status = "default",
 	value,
@@ -47,31 +44,19 @@ const Input: FC<ITextarea> = ({
 }): ReactElement => {
 	// add custom id
 	const Id = useId();
-	// icon  show status
-	const iconStatus = leftIcon ? true : false;
 	// onchange function
 	function onHandleChange(e: FormEvent<HTMLTextAreaElement>) {
 		const newValue = e.currentTarget.value as string;
 		handleChange(newValue);
 	}
 	return (
-		<div
-			className={`${styles.container} ${styles[`width__${widthSize}`]}`}
-			data-diable={disable}
-		>
+		<div className={`${styles.container} ${styles[`width__${widthSize}`]}`} data-diable={disable}>
 			{label && (
 				<label htmlFor={Id + "--input"} className={styles.label}>
 					{label}
 				</label>
 			)}
 			<div className={styles.input__box}>
-				{iconStatus && (
-					<span
-						className={`${styles.input__left_icon} ${styles[`input__left_icon__size__${size}`]}`}
-					>
-						{leftIcon}
-					</span>
-				)}
 				<textarea
 					placeholder={placeholder}
 					className={`${styles.input} ${styles[`input__size__${size}`]}`}
@@ -93,4 +78,4 @@ const Input: FC<ITextarea> = ({
 	);
 };
 
-export default Input;
+export default Textarea;
