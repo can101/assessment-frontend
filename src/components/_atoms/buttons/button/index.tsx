@@ -15,14 +15,14 @@ interface IButton {
 	isDisable: boolean;
 }
 
-const IsindeWrapper: FC<{ children: ReactNode }> = (props): ReactElement => {
+const InsideWrapper: FC<{ children: ReactNode }> = (props): ReactElement => {
 	return <div className={styles.container__button__wrapper}>{props.children}</div>;
 };
 
 /**
  * This component is the atomic element.
- * @param {(primary | secondary | tertiary | quaternary)} variant [variant=primary]
- * @param {(xs | sm | md | lg | xl)} size [size=md]
+ * @param {("primary"|"secondary"|"tertiary"|"quaternary")} variant [variant=primary]
+ * @param {("xs"|"sm"|"md"|"lg"|"xl")} size [size=md]
  * @param {function} onClick - assigned button click function
  * @param {ReactNode} iconLeft - array left icon
  * @param {ReactNode} iconRight - array right icon
@@ -51,9 +51,9 @@ const Button: FC<IButton> = ({
 					disabled={isDisable}
 					onClick={onClick}
 				>
-					{iconLeft && <IsindeWrapper>{iconLeft}</IsindeWrapper>}
-					{title && <IsindeWrapper>{title}</IsindeWrapper>}
-					{iconRight && <IsindeWrapper>{iconRight}</IsindeWrapper>}
+					{iconLeft && <InsideWrapper>{iconLeft}</InsideWrapper>}
+					{title && <InsideWrapper>{title}</InsideWrapper>}
+					{iconRight && <InsideWrapper>{iconRight}</InsideWrapper>}
 				</button>
 			</IconContext.Provider>
 		</div>

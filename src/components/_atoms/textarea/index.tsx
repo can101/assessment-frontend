@@ -1,10 +1,11 @@
-import { FC, FormEvent, ReactElement, useId } from "react";
+import {FC, FormEvent, ReactElement, useId} from "react";
 import styles from "./textarea.module.scss";
-import { IoIosAlert } from "react-icons/io";
+import {IoIosAlert} from "react-icons/io";
 
 type SizeType = "sm" | "md" | "lg" | "xl";
 type WidthSize = "full" | "default";
 type StatusType = "danger" | "success" | "default";
+
 interface ITextarea {
 	size?: SizeType;
 	placeholder?: string;
@@ -19,13 +20,13 @@ interface ITextarea {
 
 /**
  * This component is the atomic element.
- * @param {( sm | md | lg | xl)} size [size=md]
- * @param {( full | default)} widthSize [widthSize=default]
+ * @param {("sm"|"md"|"lg"|"xl")} size [size=md]
+ * @param {("full"|"default")} widthSize [widthSize=default]
  * @param {boolean} disable - [disable=false] - assigned disable state
  * @param {string} label - print info text
  * @param {string} placeholder - print empty input
  * @param {string} value - print textarea text
- * @param {(danger | success | default)} status [status=default] - hint status
+ * @param {("danger"|"success"|"default")} status [status=default] - hint status
  * @param {string} hintText - alert message
  * @param {function} handleChange - textarea assigned onchange method
  * @returns textarea react component
@@ -44,11 +45,13 @@ const Textarea: FC<ITextarea> = ({
 }): ReactElement => {
 	// add custom id
 	const Id = useId();
+
 	// onchange function
 	function onHandleChange(e: FormEvent<HTMLTextAreaElement>) {
 		const newValue = e.currentTarget.value as string;
 		handleChange(newValue);
 	}
+
 	return (
 		<div className={`${styles.container} ${styles[`width__${widthSize}`]}`} data-diable={disable}>
 			{label && (
@@ -69,7 +72,7 @@ const Textarea: FC<ITextarea> = ({
 			{hintText && (
 				<div className={`${styles.hint} ${styles[`hint__status__${status}`]}`}>
 					<span className={styles.hint__icon}>
-						<IoIosAlert size={"1.4rem"} />
+						<IoIosAlert size={"1.4rem"}/>
 					</span>
 					<span className={styles.hint__text}>{hintText}</span>
 				</div>

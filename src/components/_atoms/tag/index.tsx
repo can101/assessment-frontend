@@ -1,6 +1,6 @@
-import React, { FC, ReactElement, ReactNode } from "react";
+import React, {FC, ReactElement, ReactNode} from "react";
 import styles from "./tag.module.scss";
-import { FaPlay, FaTimes } from "react-icons/fa";
+import {FaTimes} from "react-icons/fa";
 
 type VariantType = "primary" | "secondary" | "tertiary" | "quaternary";
 
@@ -17,7 +17,7 @@ interface ITag {
  * @param {function} deleteClick - delete tag assigned click function
  * @param {ReactNode} icon - tag custom icon
  * @param {string} title - print text
- * @param {(primary | secondary | tertiary | quaternary)} variant [variant=primary]
+ * @param {("primary"|"secondary"|"tertiary"|"quaternary")} variant [variant=primary]
  * @param {boolean} disable - [disable=false] - assigned disable state
  * @returns tag react component
  */
@@ -37,17 +37,16 @@ const Tag: FC<ITag> = ({
 		>
 			{icon && icon}
 			{title}
-			{
+			{deleteClick &&
 				<span
 					className={styles.close_button}
 					onClick={() => {
-						if (!deleteClick) {
-							deleteClick;
-						}
-					}}
-					data-disable={disable ? true : false}
+						if (!disable) deleteClick();
+					}
+					}
+					data-disable={disable}
 				>
-					<FaTimes size={".96em"} />
+					<FaTimes size={".96em"}/>
 				</span>
 			}
 		</div>

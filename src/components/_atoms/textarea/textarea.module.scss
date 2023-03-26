@@ -4,6 +4,7 @@
   row-gap: 10px;
   letter-spacing: 1px;
   font-weight: 600;
+
   &[data-diable="true"] {
     filter: grayscale(100%);
   }
@@ -20,21 +21,26 @@
 .hint {
   display: flex;
   column-gap: 5px;
+
   & > span {
     display: inline-flex;
     align-items: center;
     justify-content: stretch;
   }
+
   &__icon {
   }
+
   &__text {
     font-size: 16px;
     text-transform: capitalize;
   }
+
   &__status {
     &__danger {
       color: #f03d3d;
     }
+
     &__success {
       color: #23b36f;
     }
@@ -43,11 +49,12 @@
 
 .input {
   user-select: none;
+
   &__box {
     position: relative;
   }
+
   resize: vertical;
-  border: none;
   box-shadow: none;
   outline: none;
   background-color: var(--diamond_2);
@@ -60,9 +67,11 @@
   border: 1px solid var(--azure);
   transition: box-shadow 0.3s ease-in;
   letter-spacing: 1px;
+
   &:focus {
     box-shadow: 0 0 6px 5px var(--diamond_1);
   }
+
   &::placeholder {
     text-transform: capitalize;
     color: #4f4b5c;
@@ -73,19 +82,23 @@
       min-height: 88px;
       font-size: 12px;
     }
+
     &__md {
       min-height: 96px;
       font-size: 14px;
     }
+
     &__lg {
       min-height: 104px;
       font-size: 16px;
     }
+
     &__xl {
       min-height: 112px;
       font-size: 18px;
     }
   }
+
   &:disabled {
     cursor: not-allowed;
   }
@@ -95,6 +108,7 @@
   &__default {
     max-width: 350px;
   }
+
   &__full {
     width: 100%;
   }

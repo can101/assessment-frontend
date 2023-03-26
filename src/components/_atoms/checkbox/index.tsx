@@ -15,12 +15,12 @@ interface ICheckbox {
 
 /**
  * This component is the atomic element.
- * @param {(xs | sm | md | lg | xl)} size [size=md]
- * @param {(round|square)} variant [variant=square]
+ * @param {("xs"|"sm"|"md"|"lg"|"xl")} size [size=md]
+ * @param {("round"|"square")} variant [variant=square]
  * @param {ReactNode} icon - checkbox custom icon
  * @param {string} label -print checkbox label inside text
- * @param {boolean} disable - [disable=false] - assigned cehckbox disable state
- * @returns cehckbox react component
+ * @param {boolean} disable - [disable=false] - assigned checkbox disable state
+ * @returns checkbox react component
  */
 
 const Checkbox: FC<ICheckbox> = ({label, variant = "square", size = "md", disable = false, icon}): ReactElement => {

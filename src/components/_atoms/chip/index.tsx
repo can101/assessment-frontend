@@ -16,7 +16,7 @@ interface IChip {
 
 /**
  * This component is the atomic element.
- * @param {(xs | sm | md | lg | xl)} size [size=md]
+ * @param {("xs"|"sm"|"md"|"lg"|"xl")} size [size=md]
  * @param {ReactNode} icon - chip custom icon
  * @param {boolean} border - [border=false] - assigned chip border state
  * @param {boolean} disable - [disable=false] - assigned disable state

@@ -3,7 +3,7 @@
   align-items: center;
   gap: 10px;
 
-  .toogle {
+  .toggle {
     cursor: pointer;
     background: var(--alice);
     border-radius: 95px;
@@ -11,7 +11,7 @@
     transition: background-color .5s ease;
 
     &__shadow {
-      box-shadow: 0px 2px 4px var(--chinese), 0px 0px 0px 4px var(--diamond_2);
+      box-shadow: 0 2px 4px var(--chinese), 0 0 0 4px var(--diamond_2);
     }
 
     &[data-check="true"] {
