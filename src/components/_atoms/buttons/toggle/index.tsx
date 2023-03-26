@@ -1,5 +1,5 @@
 import React, {FC, ReactElement, useState} from "react";
-import styles from "./toogle.module.scss";
+import styles from "./toggle.module.scss";
 
 export type SizeType = "xs" | "sm" | "md" | "lg" | "xl";
 interface IToggle {

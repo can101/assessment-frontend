@@ -77,9 +77,7 @@ const Input: FC<IInput> = ({
 				)}
 				<input
 					placeholder={placeholder}
-					className={`${styles.input} ${styles[`input__size__${size}`]} ${
-						styles[`input__size__${size}__pl`]
-					}`}
+					className={`${styles.input} ${styles[`input__size__${size}`]} ${leftIcon ? styles[`input__size__${size}__pl`] : ""}`}
 					type="text"
 					id={Id + "--input"}
 					onChange={onHandleChange}
