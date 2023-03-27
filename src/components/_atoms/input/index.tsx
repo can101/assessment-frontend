@@ -59,7 +59,7 @@ const Input: FC<IInput> = ({
 
 	return (
 		<div
-			className={`${styles.container} ${styles[`width__full__${widthSize}`]}`}
+			className={`${styles.container} ${styles[`width__${widthSize}`]}`}
 			data-diable={disable}
 		>
 			{label && (
