@@ -56,7 +56,7 @@ const Dropdown: FC<IDropdown> = ({
 }): ReactElement => {
 	const [state, setState] = useState<boolean>(false);
 	const [currentItem, setCurrentItem] = useState<IListItem>();
-
+	
 	const toggleState = (currentStatus: boolean, currentSeconds?: number) => {
 		if (!disable) {
 			setTimeout(() => {

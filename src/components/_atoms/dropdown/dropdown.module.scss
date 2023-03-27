@@ -62,7 +62,7 @@
   position: relative;
   gap: 5px;
 
-  &:hover {
+  &:not(&[data-diable="true"]):hover {
     box-shadow: 0 0 6px 5px var(--diamond_1);
   }
 
@@ -77,12 +77,12 @@
     animation: slide-bottom 0.15s linear both;
     position: absolute;
     background-color: var(--cornflower);
-    width: 100%;
     top: 5px;
     right: 0;
     border-radius: 16px;
     border: 1px solid var(--diamond_1);
-    min-width: 280px;
+    width: 100%;
+    min-width: 200px;
 
     &__list {
       width: 100%;
