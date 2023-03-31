@@ -13,6 +13,8 @@
     justify-content: space-between;
     box-shadow: none;
     flex: 1;
+    letter-spacing: 1px;
+    font-weight: 600;
     color: var(--venetian);
     text-transform: capitalize;
     border: 1px solid transparent;
@@ -155,4 +157,9 @@
       }
     }
   }
+}
+
+.width_full {
+  width: 100% !important;
+  justify-content: center;
 }
