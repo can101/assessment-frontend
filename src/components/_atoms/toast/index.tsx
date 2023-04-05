@@ -18,7 +18,7 @@ interface IHandleToast {
 
 /**
  * This component is the molecule element.
- * @param {string} message - image source link
+ * @param {string} message - print of the text
  * @param {function} handleClick - assigned undo button click function
  * @returns toast react component
  */
@@ -55,7 +55,7 @@ const Toast: FC<IToast> = ({message, handleClick, t}): ReactElement => {
 
 /**
  * This function create new toast.
- * @param {string} message - image source link
+ * @param {string} message - print of the text
  * @param {function} undoHandleClick - assigned undo button click function
  * @returns toast trigger function
  */
