@@ -62,7 +62,6 @@ const Toast: FC<IToast> = ({message, handleClick, t}): ReactElement => {
 
 const HandleToast = ({message, undoHandleClick}: IHandleToast) => {
     toast((t) => (<Toast message={message} handleClick={undoHandleClick} t={t}/>), {
-        duration: 3000,
         position: "top-center"
     });
 }
