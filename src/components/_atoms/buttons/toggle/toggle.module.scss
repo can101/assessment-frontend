@@ -1,0 +1,122 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  .toggle {
+    cursor: pointer;
+    background: var(--alice);
+    border-radius: 95px;
+    position: relative;
+    transition: background-color .5s ease;
+
+    &__shadow {
+      box-shadow: 0 2px 4px var(--chinese), 0 0 0 4px var(--diamond_2);
+    }
+
+    &[data-check="true"] {
+      &:after {
+        content: "\2713" !important;
+      }
+    }
+
+    &:after {
+      transition: all .3s linear;
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: var(--azure);
+      top: 5px;
+      left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--azure);
+      font-weight: bolder;
+    }
+
+    &[data-toogle="false"] {
+      //background: #cf2a2a;
+
+      &:after {
+        transform: translateX(0%);
+      }
+    }
+
+    &[data-toogle="true"] {
+      &:after {
+        transform: translateX(100%);
+        background: #fff;
+      }
+
+      background: var(--azure);
+    }
+
+    &[data-disable="true"] {
+      filter: grayscale(100%);
+      cursor: not-allowed;
+    }
+  }
+
+  .label {
+    color: var(--azure);
+    text-transform: capitalize;
+  }
+
+  &__size {
+    &__xs {
+      width: 50px;
+      height: 30px;
+
+      &:after {
+        height: 20px;
+        width: 20px;
+        font-size: 15px;
+      }
+    }
+
+    &__sm {
+      width: 60px;
+      height: 35px;
+
+      &:after {
+        height: 25px;
+        width: 25px;
+        font-size: 20px;
+      }
+    }
+
+    &__md {
+      width: 70px;
+      height: 40px;
+
+      &:after {
+        height: 30px;
+        width: 30px;
+        font-size: 25px;
+      }
+    }
+
+    &__lg {
+      width: 80px;
+      height: 45px;
+
+      &:after {
+        height: 35px;
+        width: 35px;
+        font-size: 25px;
+      }
+    }
+
+    &__xl {
+      width: 90px;
+      height: 50px;
+
+      &:after {
+        height: 40px;
+        width: 40px;
+        font-size: 30px;
+      }
+    }
+  }
+}
