@@ -1,0 +1,70 @@
+.container {
+  display: inline-flex;
+  gap: 10px;
+
+  .checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: var(--diamond_1);
+    user-select: none;
+    border: 2px solid var(--azure);
+    transition: box-shadow .5s;
+
+    &__variant {
+      &__square {
+        border-radius: 6px;
+      }
+
+      &__round {
+        border-radius: 50%;
+      }
+    }
+
+    &[data-checked=true] {
+      background: var(--azure);
+    }
+
+    &__anim {
+      box-shadow: 0 0 0 5px var(--beau);
+    }
+
+    &__icon {
+      transition: all 0.2s ease;
+      transform: scale(1.1);
+    }
+
+    &__size {
+      &__xs {
+        height: 12px;
+        width: 12px;
+      }
+
+      &__sm {
+        height: 14px;
+        width: 14px;
+      }
+
+      &__md {
+        height: 16px;
+        width: 16px;
+      }
+
+      &__lg {
+        height: 18px;
+        width: 18px;
+      }
+
+      &__xl {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  &__disable {
+    filter: grayscale(100%);
+  }
+}

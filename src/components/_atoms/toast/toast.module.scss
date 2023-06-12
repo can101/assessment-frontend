@@ -1,0 +1,61 @@
+.container {
+  border: 2px solid var(--diamond_1);
+  user-select: none;
+  width: auto;
+  font-weight: 600;
+  border-radius: 13px !important;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-transform: capitalize;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    color: var(--azure);
+
+    &__icon_box {
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__info_text {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-right: 20px;
+      text-align: start;
+      word-break: break-all;
+    }
+  }
+}
+
+.icon {
+  color: var(--azure);
+  font-size: 1.5em;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 50%;
+    width: 2px;
+    background: var(--alice);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(5px + 100%);
+    border-radius: 75px;
+  }
+}

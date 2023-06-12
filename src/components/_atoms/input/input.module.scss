@@ -1,0 +1,157 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+
+  &[data-diable="true"] {
+    filter: grayscale(100%);
+  }
+}
+
+.label {
+  display: block;
+  text-align: start;
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #4f4b5c;
+}
+
+.hint {
+  display: flex;
+  column-gap: 5px;
+
+  & > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: stretch;
+  }
+
+  &__icon {
+  }
+
+  &__text {
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  &__status {
+    &__danger {
+      color: #f03d3d;
+    }
+
+    &__success {
+      color: #23b36f;
+    }
+  }
+}
+
+.input {
+  user-select: none;
+
+  &__box {
+    position: relative;
+  }
+
+  &__left_icon {
+    position: absolute;
+    display: inline-block;
+    color: #4f4b5c;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &__size {
+      &__sm {
+        font-size: 14px;
+      }
+
+      &__md {
+        font-size: 16px;
+      }
+
+      &__lg {
+        font-size: 18px;
+      }
+
+      &__xl {
+        font-size: 24px;
+      }
+    }
+  }
+
+  box-shadow: none;
+  outline: none;
+  background-color: var(--diamond_2);
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  caret-color: var(--doger);
+  color: var(--doger);
+  border: 1px solid var(--azure);
+  transition: box-shadow 0.3s ease-in;
+  letter-spacing: 1px;
+
+  &:focus {
+    box-shadow: 0 0 6px 5px var(--diamond_1);
+  }
+
+  &::placeholder {
+    text-transform: capitalize;
+    color: #4f4b5c;
+  }
+
+  &__size {
+    &__sm {
+      height: 32px;
+      font-size: 12px;
+
+      &__pl {
+        padding-left: 35px;
+      }
+    }
+
+    &__md {
+      height: 40px;
+      font-size: 14px;
+
+      &__pl {
+        padding-left: 40px;
+      }
+    }
+
+    &__lg {
+      height: 48px;
+      font-size: 16px;
+
+      &__pl {
+        padding-left: 45px;
+      }
+    }
+
+    &__xl {
+      height: 56px;
+      font-size: 18px;
+
+      &__pl {
+        padding-left: 50px;
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.width {
+  &__default {
+    max-width: 350px;
+  }
+
+  &__full {
+    width: 100%;
+  }
+}

@@ -1,0 +1,102 @@
+:root {
+  --azure: #0084ff;
+  --doger: #1c92ff;
+  --diamond_1: #c2e2ff;
+  --diamond_2: #d2e9ff54;
+  --chinese: #110c221f;
+  --ghost: #f5faff;
+  --alice: #e9f4ff;
+  --cornflower: #b3cfeb;
+  --beau: #c2e3ffa1;
+  --venetian: #eaf3fd;
+}
+
+html[data-theme="default"] {
+  // :root {
+  --azure: #4b4b4b;
+  --doger: #424242;
+  --diamond_1: #dad9dc;
+  --diamond_2: #ecedeea9;
+  --chinese: #110c220e;
+  --ghost: #d1d1d180;
+  --alice: #d3d3d3a8;
+  --cornflower: #8888883f;
+  --beau: #eeeeee;
+  --venetian: #dbdbdb;
+  // }
+}
+
+html[data-theme="warning"] {
+  // :root {
+  --azure: #fdba0f;
+  --doger: #f2aa09;
+  --diamond_1: #efdcaf;
+  --diamond_2: #ffebb9a8;
+  --chinese: #f2eeff13;
+  --ghost: #ffe5b091;
+  --alice: #fff7e1;
+  --cornflower: #fff5db;
+  --beau: #fff7e3;
+  --venetian: #fffaf0;
+  // }
+}
+
+html[data-theme="danger"] {
+  // :root {
+  --azure: #f03d3d;
+  --doger: #cf2a2a;
+  --diamond_1: #ffe2e3;
+  --diamond_2: #f8dee048;
+  --chinese: #f95e5e27;
+  --ghost: #ffe8e96c;
+  --alice: #ffebeb;
+  --cornflower: #ffe0e0;
+  --beau: #ffe8e881;
+  --venetian: #fff7f7;
+  // }
+}
+
+html[data-theme="secondary"] {
+  // :root {
+  --azure: #7357ff;
+  --doger: #8b75ff;
+  --diamond_1: #d5cff1ab;
+  --diamond_2: #d5cdfc42;
+  --chinese: #110c221f;
+  --ghost: #e8e6ff85;
+  --alice: #e8e6ff;
+  --cornflower: #f1eeff;
+  --beau: #e8e4fc;
+  --venetian: #fff;
+  // }
+}
+
+html[data-theme="info"] {
+  // :root {
+  --azure: #0084ff;
+  --doger: #1c92ff;
+  --diamond_1: #c2e2ff;
+  --diamond_2: #c0e0fd;
+  --chinese: #110c221f;
+  --ghost: #f5faff;
+  --alice: #e9f4ff;
+  --cornflower: #b3cfeb;
+  --beau: #c0daf3;
+  --venetian: #fff;
+  // }
+}
+
+html[data-theme="success"] {
+  // :root {
+  --azure: #23b36f;
+  --doger: #28c07a;
+  --diamond_1: #0a9c5525;
+  --diamond_2: #dbffef67;
+  --chinese: #d5fdec;
+  --ghost: #e9fff5;
+  --alice: #dffff1;
+  --cornflower: #c2f1da;
+  --beau: #e0fff07e;
+  --venetian: #f4fffa;
+  // }
+}
