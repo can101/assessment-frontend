@@ -1,8 +1,8 @@
-import {FC, ReactElement, ReactNode, useState} from "react";
+import { FC, ReactElement, ReactNode, useState } from "react";
 import styles from "./dropdown.module.scss";
-import {IoIosAlert} from "react-icons/io";
-import {MdOutlineKeyboardArrowDown} from "react-icons/md";
-import {IconContext} from "react-icons";
+import { IoIosAlert } from "react-icons/io";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { IconContext } from "react-icons";
 
 type SizeType = "sm" | "md" | "lg" | "xl";
 type WidthSize = "full" | "default" | "small";
@@ -24,8 +24,9 @@ interface IDropdown {
 	status?: StatusType;
 	hintText?: string;
 	chooseList: IListItem[];
+	onClick?: (item: string) => void;
+	defaultItem?: IListItem;
 }
-
 
 /**
  * This component is the atomic element.
@@ -39,6 +40,8 @@ interface IDropdown {
  * @param {string} hintText - alert message
  * @param {("danger"|"success"|"default")} status [status=default] - hint status
  * @param {array} chooseList - assigned choose list
+ * @param {IListItem} defaultItem - list item object
+ * @param {function} onClick - custom function
  * @return dropdown react component
  */
 
@@ -52,11 +55,13 @@ const Dropdown: FC<IDropdown> = ({
 	status = "default",
 	widthSize = "default",
 	hintText,
-	chooseList
+	chooseList,
+	onClick,
+	defaultItem,
 }): ReactElement => {
 	const [state, setState] = useState<boolean>(false);
-	const [currentItem, setCurrentItem] = useState<IListItem>();
-	
+	const [currentItem, setCurrentItem] = useState<IListItem>(defaultItem?.name?defaultItem:chooseList[0]);
+
 	const toggleState = (currentStatus: boolean, currentSeconds?: number) => {
 		if (!disable) {
 			setTimeout(() => {
@@ -65,15 +70,8 @@ const Dropdown: FC<IDropdown> = ({
 		}
 	};
 	return (
-		<div
-			className={`${styles.container} ${styles[`width__${widthSize}`]}`}
-			data-diable={disable}
-		>
-			{label && (
-				<label className={styles.label}>
-					{label}
-				</label>
-			)}
+		<div className={`${styles.container} ${styles[`width__${widthSize}`]}`} data-diable={disable}>
+			{label && <label className={styles.label}>{label}</label>}
 			<div
 				onMouseOver={() => toggleState(true)}
 				onClick={() => toggleState(true)}
@@ -82,40 +80,51 @@ const Dropdown: FC<IDropdown> = ({
 				onMouseEnter={() => toggleState(true)}
 				onMouseLeave={() => toggleState(false, 100)}
 				className={`${styles.dropdown} ${styles[`size__${size}`]} ${styles[`width__${widthSize}`]}`}
-				data-diable={disable}>
-				<IconContext.Provider value={{className: styles.container__icon, size: "1.3em"}}>
-					{leftIcon && <div className={styles.left_icon}>
-						{leftIcon}
-					</div>}
-					{divider && <div className={styles.divider_vertical}>
-						<div></div>
-					</div>}
-					{title && <div
-						className={styles.fill_area}>{currentItem != undefined ? currentItem.name : "Select Item"}</div>}
+				data-diable={disable}
+			>
+				<IconContext.Provider value={{ className: styles.container__icon, size: "1.3em" }}>
+					{leftIcon && <div className={styles.left_icon}>{leftIcon}</div>}
+					{divider && (
+						<div className={styles.divider_vertical}>
+							<div></div>
+						</div>
+					)}
+					{title && (
+						<div className={styles.fill_area}>
+							{currentItem != undefined ? currentItem.name : "Select Item"}
+						</div>
+					)}
 					<div className={styles.right_icon}>
-						<MdOutlineKeyboardArrowDown/>
+						<MdOutlineKeyboardArrowDown />
 					</div>
 				</IconContext.Provider>
-				{state && <span className={`${styles.dropdown__menu}`}>
-					<ul className={`${styles.dropdown__menu__list}`}>
-						{chooseList.map((item, i) => (
-							<li key={i}>
-								<div onClick={() => {
-									setCurrentItem(item);
-								}}
-									 className={`${styles[`size__${size}`]} ${styles.dropdown__menu__list__item} `}
-									 data-active={currentItem?.id == item.id ? true : ""}>
-									{item.name}
-								</div>
-							</li>
-						))}
-					</ul>
-				</span>}
+				{state && (
+					<span className={`${styles.dropdown__menu}`}>
+						<ul className={`${styles.dropdown__menu__list}`}>
+							{chooseList.map((item, i) => (
+								<li key={i}>
+									<div
+										onClick={() => {
+											setCurrentItem(item);
+											if (onClick) {
+												onClick(item.name);
+											}
+										}}
+										className={`${styles[`size__${size}`]} ${styles.dropdown__menu__list__item} `}
+										data-active={currentItem?.id == item.id ? true : ""}
+									>
+										{item.name}
+									</div>
+								</li>
+							))}
+						</ul>
+					</span>
+				)}
 			</div>
 			{hintText && (
 				<div className={`${styles.hint} ${styles[`hint__status__${status}`]}`}>
 					<span className={styles.hint__icon}>
-						<IoIosAlert size={"1.4rem"}/>
+						<IoIosAlert size={"1.4rem"} />
 					</span>
 					<span className={styles.hint__text}>{hintText}</span>
 				</div>
